@@ -38,6 +38,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th>showImage</th>
           <th>productId</th>
           <th>productName</th>
           <th>productCode</th>
@@ -45,25 +46,26 @@
           <th>description</th>
           <th>price</th>
           <th>starRating</th>
-          <th>imageUrl</th>
+
         </tr>
       </thead>
       <tbody>
         <tr *ngFor='let product of Products'>
-
+          <td>
+            <img *ngIf='showImage'
+                 [src]='product.imageUrl'
+                 [title]='product.productName'
+                 [style.width.px]='imageWidth'
+                 [style.margin.px]='imageMargin'>
+          </td>
           <td>{{ product.productId}} </td>
           <td> {{ product.productName }}</td>
           <td>{{ product.productCode  }}</td>
           <td>{{ product.releaseDate }}</td>
+          <td>{{ product.description }}</td>
           <td>{{ product.price }}</td>
         <td> {{product.starRating}}</td>
-        <td>
-          <img *ngIf='showImage'
-               [src]='product.imageUrl'
-               [title]='product.productName'
-               [style.width.px]='imageWidth'
-               [style.margin.px]='imageMargin'>
-        </td>
+
         </tr>
       </tbody>
     </table>
