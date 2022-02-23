@@ -10,7 +10,7 @@ export class ProductListComponent implements OnInit {
   pageTitle = 'Product List';
   imageWidth = 50;
   imageMargin = 2;
-  showImage = true;
+  showImage: boolean = false;
   listFilter = 'string';
 
 
@@ -66,10 +66,19 @@ export class ProductListComponent implements OnInit {
       "starRating": 4.6,
       "imageUrl": "assets/images/xbox-controller.png"
     }
+
+
   ]
+
+
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

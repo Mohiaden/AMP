@@ -35,10 +35,13 @@
       </div>
     </div>
     <div class="table-responsive">
-    <table class="table">
+    <table class="table" *ngIf="Products?.length">
+
       <thead>
         <tr>
-          <th>showImage</th>
+          <th><button  (click)="toggleImage()" class="btn btn-primary">
+            showImage
+          </button></th>
           <th>productId</th>
           <th>productName</th>
           <th>productCode</th>
